@@ -67,7 +67,7 @@ seurch_button.addEventListener("click" , (event) => {
             backgroundColor: '#ef4040',
 
             iconColor: 'white',
-            iconUrl: './../img/bi_x-octagon.svg',
+            iconUrl: 'img/bi_x-octagon.svg',
             
             position: 'topRight'
             });
