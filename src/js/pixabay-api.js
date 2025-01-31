@@ -32,7 +32,7 @@ seurch_button.addEventListener("click" , (event) => {
 
     let url = `https://pixabay.com/api/?key=${apiKey}&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true`;
 
-    if(inputValue.length <= 0 || formValue.value === "") {
+    if(inputValue.length = 0 || formValue.value === "") {
 
         iziToast.warning({
             title: 'Warning',
@@ -44,8 +44,6 @@ seurch_button.addEventListener("click" , (event) => {
             backgroundColor: '#ef4040',
 
             iconColor: 'white',
-            iconUrl: './img/bi_x-octagon.svg',
-            
             position: 'topRight'
         });
 
@@ -67,8 +65,6 @@ seurch_button.addEventListener("click" , (event) => {
             backgroundColor: '#ef4040',
 
             iconColor: 'white',
-            iconUrl: 'bi_x-octagon.svg',
-            
             position: 'topRight'
             });
         }
@@ -102,8 +98,6 @@ seurch_button.addEventListener("click" , (event) => {
             backgroundColor: '#ef4040',
 
             iconColor: 'white',
-            iconUrl: './bi_x-octagon.svg',
-            
             position: 'topRight'
         });
     });
