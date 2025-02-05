@@ -10,6 +10,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import { createMarkup } from "./render-functions";
 
+import axios from 'axios';
 
 /*   Variables   */ 
 
@@ -25,11 +26,10 @@ const refreshPage = new SimpleLightbox('.gallery a', {
 /*  Function  */
 
 export function getImages(api) {
-    fetch(api)
-    .then((response) => response.json())
-    .then((data) => {
-
-        if (!data.hits.length) {
+    axios
+    .get(api)
+    .then((response) => { console.log(response)
+        if (!response.data.hits.length) {
             iziToast.warning({
                title: 'Warning',
                message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -46,13 +46,12 @@ export function getImages(api) {
 
         loader.style.display = 'block';
 
-        listImages.innerHTML = ("beforeend", createMarkup(data.hits));
+        listImages.innerHTML = ("beforeend", createMarkup(response.data.hits));
 
         loader.style.display = 'none';
 
         refreshPage.refresh();   
-        
- })
+    })
     .catch((error) => {
         iziToast.error({
             title: 'Error',
@@ -68,3 +67,7 @@ export function getImages(api) {
         });
     });
 }
+
+/* COMMENT HM */
+
+alert("Коментар : Я не можу зрозуміти яку саме частину винести в файл api ,а яку в мейн , тикніть пальцем в потрібну частину коду , яку винести Переробив на axios і працює завантажувач , дальше ступор");

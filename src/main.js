@@ -1,3 +1,9 @@
+
+// Описаний у документації
+import iziToast from "izitoast";
+// Додатковий імпорт стилів
+import "izitoast/dist/css/iziToast.min.css";
+
 import { listImages } from "./js/pixabay-api";
 import { getImages } from "./js/pixabay-api";
 import { loader } from "./js/pixabay-api";
@@ -5,15 +11,11 @@ import { loader } from "./js/pixabay-api";
 
 /*   A P I  S E R V I E S   */ 
 
-/*   ↓   */
-
-
 /*   Variables   */ 
 
 const form = document.querySelector(".form");
 
 const apiKey = "48554296-d2b735e3ffae040ef4553c6bb";
-
 
 /*  Styles  */
 
@@ -50,6 +52,6 @@ form.addEventListener("submit" , (event) => {
         return;
     }
 
-    getImages(url );
-    form.reset();
+    getImages(url)
+    form.reset()
 });
