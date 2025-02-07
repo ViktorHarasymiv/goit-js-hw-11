@@ -16,7 +16,7 @@
     height: 40px; 
 }
 
-input[type="text" i] {
+input[type="search" i] {
     box-sizing: border-box;
     
     height: 100%;
@@ -36,8 +36,8 @@ input[type="text" i] {
     color: #808080;
 }
 
-input[type="text" i]:hover,
-input[type="text" i]:focus {
+input[type="search" i]:hover,
+input[type="search" i]:focus {
     border-width: 1.5px ;
     border-color: #6c8cff;
 }
@@ -151,6 +151,11 @@ input[type="text" i]:focus {
     box-sizing: border-box;
     animation: animloader 1s linear infinite alternate;
   }
+
+.hidden {
+    visibility: hidden;
+}
+
 
   @keyframes animloader {
     0% {
