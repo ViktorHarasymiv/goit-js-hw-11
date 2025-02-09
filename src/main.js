@@ -61,6 +61,7 @@ form.addEventListener("submit" , async (event) => {
         const data = await getImages(inputValue);
 
         if (!data.hits.length) {
+            loader.classList.add('hidden');
             iziToast.warning({
                    title: 'Warning',
                    message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -73,17 +74,22 @@ form.addEventListener("submit" , async (event) => {
                    iconColor: 'white',
                    position: 'topRight'
             });
-        }
+        } else {
     
-        listImages.innerHTML = ("beforeend", createMarkup(data.hits));
+        listImages.insertAdjacentHTML("beforeend", createMarkup(data.hits));
 
         loader.classList.add('hidden');
     
         refreshPage.refresh();
+
         form.reset();
+    }
+        
 
     } catch(error) {
-            iziToast.error({
+        loader.classList.add('hidden');
+
+        iziToast.error({
                 title: 'Error',
                 message: 'Something went wrong. Please try again later.',
     
@@ -95,6 +101,5 @@ form.addEventListener("submit" , async (event) => {
                 iconColor: 'white',
                 position: 'topRight'
             });
-            form.reset()
         }
 });
